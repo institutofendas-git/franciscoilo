@@ -169,6 +169,80 @@
     footer{padding-bottom:60px}
   }
   @media (max-width:859px){ .hero-right{display:contents} }
+
+  /* ================= PROPOSTAS v2 ================= */
+  h2,.quote p{text-wrap:balance}
+  /* entrada suave */
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  @keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .hero h1 .oi{animation:sobe .8s .15s both}
+  .hero h1 .eu{animation:sobe .8s .3s both}
+  .hero p{animation:sobe .8s .5s both}
+  /* seta no botão e desenho que reage */
+  .cta::after{content:"→";display:inline-block;margin-left:8px;transition:transform .25s ease}
+  a.card:hover .cta::after{transform:translateX(5px)}
+  .card .traco,.card .brasao{transition:transform .5s ease,opacity .5s ease}
+  a.card:hover .traco{transform:translateY(-50%) rotate(3deg) scale(1.05);opacity:.75}
+  a.card:hover .brasao{transform:translateY(-50%) rotate(-3deg) scale(1.05);opacity:.45}
+  a.card:hover .bg{transform:scale(1.04)}
+  .card .bg{transition:transform .6s ease;transform-origin:right center}
+  /* celular: desenho não passa por cima do texto */
+  @media (max-width:859px){
+    .c-casal .traco{width:150px;right:-34px;top:auto;bottom:-18px;transform:rotate(8deg);opacity:.42}
+    .c-supervisao .brasao{width:140px;right:-30px;top:auto;bottom:-22px;transform:rotate(-8deg);opacity:.26}
+    a.card:hover .traco,a.card:hover .brasao{transform:none}
+  }
+  /* frase */
+  .quote{margin-top:64px;background:var(--verde);color:var(--creme);text-align:center;padding:76px 26px;position:relative;isolation:isolate;overflow:hidden}
+  .quote p{max-width:22ch;margin:0 auto;font-family:"Instrument Serif",Georgia,serif;font-size:2.1rem;line-height:1.12}
+  .quote em{font-family:"Birthstone",cursive;font-style:normal;font-size:1.3em;line-height:.8;color:var(--grama)}
+  .quote .marca{width:54px;margin:0 auto 22px;opacity:.85}
+  /* antes de começar */
+  .antes{max-width:1080px;margin:0 auto;padding:10px 22px 30px;display:grid;gap:34px}
+  .antes .convite{padding:64px 0 0}
+  .quem{border-top:1px solid rgba(3,61,47,.18);padding-top:22px}
+  .quem .rot,.faq .rot{font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--vermelho);margin-bottom:12px}
+  .quem h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:1.7rem;line-height:1.1;color:var(--verde)}
+  .quem ul{list-style:none;margin-top:14px}
+  .quem li{padding:11px 0;border-bottom:1px solid rgba(3,61,47,.12);font-size:1.06rem}
+  .quem li:last-child{border-bottom:0}
+  .faq{border-top:1px solid rgba(3,61,47,.18);padding-top:22px}
+  .faq details{border-bottom:1px solid rgba(3,61,47,.14)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+       padding:17px 0;font-family:"Instrument Serif",Georgia,serif;font-size:1.4rem;line-height:1.15;color:var(--verde)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";flex:none;font-family:"Alegreya Sans",sans-serif;font-size:1.5rem;color:var(--vermelho);transition:transform .25s ease}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq summary:focus-visible{outline:3px solid var(--grama);outline-offset:3px;border-radius:6px}
+  .faq details p a{color:var(--vermelho);font-weight:700;text-underline-offset:3px}
+  .faq details p{padding:0 0 18px;max-width:52ch;font-size:1.08rem}
+  /* rodapé */
+  footer{margin-top:40px}
+  footer .links{display:flex;justify-content:center;gap:22px;margin-top:10px;flex-wrap:wrap}
+  @media (min-width:860px){
+    .botoes{grid-template-columns:repeat(6,1fr)}
+    .botoes > .card{grid-column:span 2;min-height:250px;padding:30px 28px}
+    .botoes > .c-individual,.botoes > .c-casal{grid-column:span 3;min-height:300px;padding:40px 38px}
+    .botoes > .card:not(.c-individual):not(.c-casal) h3 .a{font-size:2.2rem}
+    .botoes > .card:not(.c-individual):not(.c-casal) h3 .b{font-size:2.5rem}
+    .c-individual h3,.c-individual .sub{max-width:54%}
+    .c-casal .traco{width:220px;right:-70px;opacity:.45}
+    .c-supervisao .brasao{width:150px;right:-62px;top:auto;bottom:-30px;transform:rotate(-8deg);opacity:.2}
+    a.card:hover .brasao{transform:rotate(-3deg) scale(1.05)}
+    .c-pod{flex-direction:column;gap:0;text-align:center;justify-content:center}
+    .c-pod .logo-nn{width:104px;margin-bottom:6px}
+    .c-pod .txt{align-items:center}
+    .quote{padding:120px 40px;margin-top:90px}
+    .quote::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/grama.svg) 0 0/840px 464px repeat;opacity:.07}
+    .quote p{font-size:3.4rem;max-width:24ch}
+    .antes{grid-template-columns:1fr 1.5fr;gap:60px;padding-bottom:60px}
+    .antes .convite{grid-column:1 / -1;padding-top:100px}
+  }
+  @media (min-width:1100px){
+    .c-individual h3 .a,.c-casal h3 .a{font-size:3rem}
+    .c-individual h3 .b,.c-casal h3 .b{font-size:3.5rem}
+  }
 </style>
 </head>
 <body>
@@ -195,28 +269,28 @@
   <!-- CARTÕES -->
   <div class="botoes" id="botoes">
 
-    <a class="card c-individual" href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20psicoterapia%20individual." target="_blank" rel="noopener">
+    <a class="reveal card c-individual" href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20psicoterapia%20individual." target="_blank" rel="noopener">
       <img class="bg" src="img/individual.jpg" alt="" width="1000" height="815" decoding="async">
       <h3><span class="a">psicoterapia</span><span class="b">individual</span></h3>
       <span class="sub">A relação com você mesmo</span>
       <span class="cta">Agendar pelo WhatsApp</span>
     </a>
 
-    <a class="card c-casal" href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20psicoterapia%20de%20relacionamentos." target="_blank" rel="noopener">
+    <a class="reveal card c-casal" href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20psicoterapia%20de%20relacionamentos." target="_blank" rel="noopener">
       <img class="traco" src="img/coracao-traco.webp" alt="" width="700" height="629" loading="lazy" decoding="async">
       <h3><span class="a">psicoterapia</span><span class="b">de relacionamentos</span></h3>
       <span class="sub">Cuidando da relação de vocês</span>
       <span class="cta">Agendar pelo WhatsApp</span>
     </a>
 
-    <a class="card c-supervisao" href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20supervis%C3%A3o%20cl%C3%ADnica%20individual." target="_blank" rel="noopener">
+    <a class="reveal card c-supervisao" href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20supervis%C3%A3o%20cl%C3%ADnica%20individual." target="_blank" rel="noopener">
       <img class="brasao" src="img/brasao-creme.webp" alt="" width="462" height="500" loading="lazy" decoding="async">
       <h3><span class="a">supervisão</span><span class="b">clínica individual</span></h3>
       <span class="sub">Acompanhamento para casos de outros psis</span>
       <span class="cta">Quero supervisão</span>
     </a>
 
-    <a class="card c-cursos" href="https://institutofendas.com.br" target="_blank" rel="noopener">
+    <a class="reveal card c-cursos" href="https://institutofendas.com.br" target="_blank" rel="noopener">
       <img class="fundo" src="img/fendas-fundo.svg" alt="" loading="lazy" decoding="async">
       <img class="logo-fd" src="img/fendas-logo.svg" alt="Instituto Fendas" loading="lazy" decoding="async">
       <h3><span class="a">cursos</span></h3>
@@ -225,13 +299,13 @@
     </a>
 
     <!-- E-BOOKS: quando tiver o link de compra, tire o comentário e troque LINK-DE-COMPRA
-    <a class="card c-ebook" href="LINK-DE-COMPRA" target="_blank" rel="noopener">
+    <a class="reveal card c-ebook" href="LINK-DE-COMPRA" target="_blank" rel="noopener">
       <h3><span class="a">e-books</span><span class="b">para ler no seu tempo</span></h3>
       <span class="cta">Quero o e-book</span>
     </a>
     -->
 
-    <div class="card c-pod">
+    <div class="reveal card c-pod">
       <img class="logo-nn" src="img/nos-em-nos.webp" alt="Nós em Nós" width="416" height="520" loading="lazy" decoding="async">
       <div class="txt">
         <span class="sub">O podcast. Soltando os nós do seu relacionamento.</span>
@@ -243,16 +317,67 @@
     </div>
 
   </div>
+
+  <!-- FRASE -->
+  <section class="quote reveal" aria-label="No que eu acredito">
+    <img class="marca" src="img/brasao-creme.webp" alt="" width="462" height="500" loading="lazy" decoding="async">
+    <p>O amor não é uma dádiva que cai do céu. É uma coisa que a gente intencionalmente <em>cuida.</em></p>
+  </section>
+
+  <!-- ANTES DE COMEÇAR -->
+  <section class="antes">
+    <h2 class="convite reveal">Antes de<br><em>começar</em></h2>
+
+    <div class="quem reveal">
+      <p class="rot">Quem te atende</p>
+      <h3>Francisco Ilo Lima Filho</h3>
+      <ul>
+        <li>Psicólogo formado pela Universidade Federal do Ceará</li>
+        <li>Especialista em Terapia de Aceitação e Compromisso (FGE-SP)</li>
+        <li>Formação em Terapia Analítico-Funcional</li>
+        <li>Formação em Terapia Comportamental Integrativa de Casais</li>
+        <li>CRP 11/17085</li>
+      </ul>
+    </div>
+
+    <div class="faq reveal">
+      <p class="rot">Como funciona</p>
+      <details>
+        <summary>Você atende online ou presencial?</summary>
+        <p>Os dois. Presencial em Fortaleza e online para quem está em qualquer outro lugar.</p>
+      </details>
+      <details>
+        <summary>Como é a psicoterapia individual?</summary>
+        <p>Sessões semanais de 50 minutos. A gente trabalha jeitos de lidar com pensamentos e emoções difíceis sem que eles te impeçam de caminhar para a vida e as relações que você quer viver.</p>
+      </details>
+      <details>
+        <summary>Como começa a psicoterapia de relacionamentos?</summary>
+        <p>Com uma avaliação: uma sessão com vocês juntos, uma com cada pessoa e uma de devolutiva, em que apresento o que compreendi e a gente constrói o plano. Depois, sessões semanais de até 1 hora.</p>
+      </details>
+      <details>
+        <summary>Você vai decidir quem está certo?</summary>
+        <p>Não. Meu papel é compreender o que acontece entre vocês e ajudar a construir acordos, considerando os limites e as responsabilidades de cada pessoa.</p>
+      </details>
+      <details>
+        <summary>Como eu agendo?</summary>
+        <p>Pelo WhatsApp, em qualquer botão desta página ou <a href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site%20e%20quero%20agendar." target="_blank" rel="noopener">clicando aqui</a>. Te explico o formato e o valor, e a gente vê os horários.</p>
+      </details>
+    </div>
+  </section>
   </main>
 
   <!-- RODAPÉ -->
   <footer>
     <img class="assinatura" src="img/assinatura-creme.webp" alt="Psicólogo Fco. Ilo" width="700" height="305" loading="lazy" decoding="async">
     <p class="where">Presencial em Fortaleza e online</p>
-    <p class="insta"><a href="https://www.instagram.com/fco.ilo/" target="_blank" rel="noopener">@fco.ilo</a></p>
+    <p class="links"><a href="https://www.instagram.com/fco.ilo/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/5585998160369?text=Oi%2C%20Ilo%21%20Vim%20pelo%20site." target="_blank" rel="noopener">WhatsApp</a></p>
     <p class="legal">Francisco Ilo Lima Filho · Psicólogo · CRP 11/17085</p>
   </footer>
 
-
+<script>
+(function(){var d=document.documentElement;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+d.classList.add('js');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%2*90)+'ms';io.observe(el)});})();
+</script>
 </body>
 </html>
