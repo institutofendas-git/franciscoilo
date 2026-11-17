@@ -120,10 +120,11 @@
   .c-supervisao .cta{color:#3f5a80}
   .c-supervisao h3 .b{color:#fff}
 
-  .c-cursos{background:var(--fd-fundo)}
-  .c-cursos .fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.9}
-  .c-cursos .logo-fd{width:150px;margin-bottom:12px}
-  .c-cursos .cta{color:var(--fd-fundo)}
+  .c-cursos{background:var(--verde)}
+  .c-cursos .bg{width:80%;object-position:40% 50%}
+  .c-cursos::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(3,40,32,.35),transparent 70%)}
+  .c-cursos .logo-cl{width:120px;margin-bottom:12px}
+  .c-cursos .cta{color:var(--verde)}
 
   .c-pod{background:var(--nn-creme);color:var(--nn-grafite);align-items:center;text-align:center}
   .c-pod .logo-nn{width:120px;margin-bottom:6px}
@@ -290,12 +291,12 @@
       <span class="cta">Quero supervisão</span>
     </a>
 
-    <a class="reveal card c-cursos" href="https://institutofendas.com.br" target="_blank" rel="noopener">
-      <img class="fundo" src="img/fendas-fundo.svg" alt="" loading="lazy" decoding="async">
-      <img class="logo-fd" src="img/fendas-logo.svg" alt="Instituto Fendas" loading="lazy" decoding="async">
-      <h3><span class="a">cursos</span></h3>
-      <span class="sub">Formações no Instituto Fendas</span>
-      <span class="cta">Ver os cursos</span>
+    <a class="reveal card c-cursos" href="https://institutofendas.com.br/clube03/" target="_blank" rel="noopener">
+      <img class="bg" src="img/clube03-pomar.jpg" alt="" width="640" height="440" loading="lazy" decoding="async">
+      <img class="logo-cl" src="img/clube03-logo.svg" alt="Clube 03" width="1678" height="725" loading="lazy" decoding="async">
+      <h3><span class="a">meus cursos</span></h3>
+      <span class="sub">Cursos e encontros sobre as relações, no Clube 03</span>
+      <span class="cta">Conhecer o Clube 03</span>
     </a>
 
     <!-- E-BOOKS: quando tiver o link de compra, tire o comentário e troque LINK-DE-COMPRA
