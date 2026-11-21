@@ -261,6 +261,14 @@ img.f{opacity:0;transition:opacity 1.1s ease}img.f.ok{opacity:1}
   .botoes > .c-pod .logo-nn{width:130px;margin:0}
   .botoes > .c-pod .txt{align-items:flex-start}
 }
+/* quebras de linha equilibradas nos cartões (evita palavra sozinha na última linha) */
+.card h3 .a,.card h3 .b,.card .sub{text-wrap:balance}
+.c-supervisao .sub{max-width:76%}
+/* telas entre tablet e notebook: três cartões por linha ficam apertados; vira dois + um largo */
+@media (min-width:860px) and (max-width:1099px){
+  .botoes > .c-supervisao,.botoes > .c-trato{grid-column:span 3}
+  .botoes > .c-cursos{grid-column:1 / -1;min-height:220px}
+}
 @media(prefers-reduced-motion:reduce){img.f{opacity:1}.hero-foto{opacity:1}}
 </style>
 </head>
